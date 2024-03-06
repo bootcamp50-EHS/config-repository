@@ -1,0 +1,33 @@
+server:
+  port: 8090
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: customer-service
+          uri: lb://customer-service
+          predicates: 
+            - Path=/customer/**
+        - id: account-service
+          uri: lb://account-service
+          predicates: 
+            - Path=/account/**
+        - id: credits-service
+          uri: lb://credits-service
+          predicates: 
+            - Path=/credit/**
+        - id: product-service
+          uri: lb://product-service
+          predicates: 
+            - Path=/product/**
+        - id: transaction-service
+          uri: lb://transaction-service
+          predicates: 
+            - Path=/transaction/**
