@@ -14,20 +14,30 @@ spring:
         - id: customer-service
           uri: lb://customer-service
           predicates: 
-            - Path=/customer/**
+            - Path=/api/customer/**
+          filters:
+            - StripPrefix=2
         - id: account-service
           uri: lb://account-service
           predicates: 
-            - Path=/account/**
+            - Path=/api/account/**
+          filters:
+            - StripPrefix=2
         - id: credits-service
           uri: lb://credits-service
           predicates: 
-            - Path=/credit/**
+            - Path=/api/credit/**
+          filters:
+            - StripPrefix=2
         - id: product-service
           uri: lb://product-service
           predicates: 
-            - Path=/product/**
+            - Path=/api/product/**
+          filters:
+            - StripPrefix=2
         - id: transaction-service
           uri: lb://transaction-service
           predicates: 
-            - Path=/transaction/**
+            - Path=/api/transaction/**
+          filters:
+            - StripPrefix=2
