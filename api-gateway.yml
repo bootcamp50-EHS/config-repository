@@ -31,8 +31,6 @@ spring:
           uri: lb://account-service
           predicates: 
             - Path=/api/account/**
-          filters:
-            - StripPrefix=2
         - id: credits-service
           uri: lb://credits-service
           predicates: 
