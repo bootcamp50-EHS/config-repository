@@ -5,7 +5,7 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: EhsBankAccountDB
+      database: EhsBankCreditDB
 eureka:
   client:
     service-url:
