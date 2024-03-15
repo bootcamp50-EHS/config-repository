@@ -19,14 +19,10 @@ spring:
           uri: lb://product-service
           predicates: 
             - Path=/api/product/**
-          filters:
-            - StripPrefix=2
         - id: bank-service
           uri: lb://bank-service
           predicates: 
             - Path=/api/bank/**
-          filters:
-            - StripPrefix=2
         - id: account-service
           uri: lb://account-service
           predicates: 
@@ -34,12 +30,8 @@ spring:
         - id: credits-service
           uri: lb://credits-service
           predicates: 
-            - Path=/api/credit/**
-          filters:
-            - StripPrefix=2        
+            - Path=/api/credit/**       
         - id: transaction-service
           uri: lb://transaction-service
           predicates: 
             - Path=/api/transaction/**
-          filters:
-            - StripPrefix=2
