@@ -27,8 +27,8 @@ spring:
           uri: lb://account-service
           predicates: 
             - Path=/api/account/**
-        - id: credits-service
-          uri: lb://credits-service
+        - id: credit-service
+          uri: lb://credit-service
           predicates: 
             - Path=/api/credit/**       
         - id: transaction-service
